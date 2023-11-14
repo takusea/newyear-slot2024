@@ -27,11 +27,13 @@
 
 .logo {
   width: 100%;
+  max-width: 960px;
   margin-top: 32px;
 }
 
 .top-text {
   width: 75%;
+  max-width: 640px;
   margin: 16px 0;
 }
 
@@ -39,14 +41,26 @@
   background: #FEF4AD;
 }
 
-.slot {
+.slot-container {
+  display: flex;
+  flex-direction: row;
   width: 100%;
+  gap: 16px;
+}
+
+@media (max-width: 767px) {
+  .slot-container {
+    flex-direction: column;
+  }
+}
+
+.slot {
+  flex-grow: 1;
   position: relative;
   overflow: hidden;
   border: 3px solid #646464;
   background-color: #fff;
 }
-
 
 .slot::before {
   content: '';
